@@ -2,7 +2,7 @@ from frappe.model.document import Document
 import frappe
 from frappe.utils import getdate, nowdate
 
-class DrugSupplyInventory(Document):
+class DrugAndSupplyInventory(Document):
     def validate(self):
         self.update_stock_status()
 
