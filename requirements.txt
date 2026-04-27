@@ -1,2 +1,1 @@
-frappe
-erpnext
+# Add your dependencies here
