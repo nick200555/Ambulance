@@ -1,0 +1,10 @@
+{
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "Report",
+ "is_standard": "Yes",
+ "module": "Ambulance Service",
+ "name": "Drug & Expiry Report",
+ "query": "SELECT item_code, item_name, ambulance_station_ref, expiry_date, quantity_in_stock, stock_status FROM `tabDrug & Supply Inventory` WHERE expiry_date <= DATE_ADD(CURDATE(), INTERVAL 90 DAY) OR stock_status = 'Low Stock'",
+ "ref_doctype": "Drug & Supply Inventory",
+ "report_type": "Query Report"
+}

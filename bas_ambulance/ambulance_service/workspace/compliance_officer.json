@@ -1,0 +1,19 @@
+{
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "Workspace",
+ "icon": "shield",
+ "is_standard": 1,
+ "label": "Compliance Officer",
+ "links": [
+  {"label": "Compliance Tasks", "link_type": "DocType", "link_to": "Compliance Task"},
+  {"label": "Compliance Calendar", "link_type": "Report", "link_to": "Compliance Ageing Report"}
+ ],
+ "modified": "2026-04-27 10:45:00",
+ "module": "Ambulance Service",
+ "name": "Compliance Officer",
+ "public": 1,
+ "role": "Compliance Officer",
+ "shortcuts": [
+  {"label": "Overdue Tasks", "link_to": "Compliance Task", "type": "DocType", "filters": [["status", "=", "Overdue"]]}
+ ]
+}

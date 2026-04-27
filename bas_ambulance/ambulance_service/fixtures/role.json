@@ -1,0 +1,8 @@
+[
+ {"doctype": "Role", "role_name": "Fleet Manager"},
+ {"doctype": "Role", "role_name": "Dispatch Officer"},
+ {"doctype": "Role", "role_name": "Billing Executive"},
+ {"doctype": "Role", "role_name": "Compliance Officer"},
+ {"doctype": "Role", "role_name": "Call Centre Agent"},
+ {"doctype": "Role", "role_name": "Paramedic"}
+]

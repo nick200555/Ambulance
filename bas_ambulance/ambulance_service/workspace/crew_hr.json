@@ -1,0 +1,19 @@
+{
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "Workspace",
+ "icon": "users",
+ "is_standard": 1,
+ "label": "Crew & HR",
+ "links": [
+  {"label": "Crew Members", "link_type": "DocType", "link_to": "Crew Member"},
+  {"label": "Shift Schedules", "link_type": "DocType", "link_to": "Shift Schedule"}
+ ],
+ "modified": "2026-04-27 10:45:00",
+ "module": "Ambulance Service",
+ "name": "Crew & HR",
+ "public": 1,
+ "role": "HR Manager",
+ "shortcuts": [
+  {"label": "Shift Management", "link_to": "Shift Schedule", "type": "DocType"}
+ ]
+}

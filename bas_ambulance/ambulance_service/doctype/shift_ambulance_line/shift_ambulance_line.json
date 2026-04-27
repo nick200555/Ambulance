@@ -1,0 +1,27 @@
+{
+ "actions": [],
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "ambulance",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ambulance",
+   "options": "Ambulance Master"
+  }
+ ],
+ "index_pages": [],
+ "istable": 1,
+ "modified": "2026-04-27 10:45:00",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Shift Ambulance Line",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
