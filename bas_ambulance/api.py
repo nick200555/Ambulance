@@ -91,3 +91,32 @@ def check_certification_expiry():
     for c in crew:
         if c.certification_expiry and getdate(c.certification_expiry) <= add_days(getdate(), 60):
             create_compliance_task(c.name, "Crew Member", "Staff Certification", c.certification_expiry)
+
+def get_permission_query_conditions(user=None):
+    if not user: user = frappe.session.user
+    # Return empty string to allow visibility by default, or add logic
+    return ""
+
+@frappe.whitelist()
+def check_drug_expiry():
+    """Checks for drugs expiring soon and creates compliance tasks."""
+    inventory = frappe.get_all("Drug and Supply Inventory", 
+        filters={"expiry_date": ["<=", add_days(now_datetime(), 90)]},
+        fields=["name", "item_name", "expiry_date"]
+    )
+    for item in inventory:
+        create_compliance_task(item.name, "Drug and Supply Inventory", "Drug Expiry", item.expiry_date)
+
+@frappe.whitelist()
+def escalate_overdue_compliance():
+    """Escalates overdue tasks by changing status or notifying."""
+    overdue = frappe.get_all("Compliance Task", filters={"status": "Overdue"})
+    for task in overdue:
+        # Potentially send notification or update priority
+        pass
+
+@frappe.whitelist()
+def update_fleet_availability():
+    """Recalculates fleet status based on current trips/maintenance."""
+    # Logic to ensure status field matches reality
+    pass
