@@ -1,50 +1,63 @@
 # BAS Ambulance Service Management Module
 
-This is a comprehensive ERPNext v15 application for managing ambulance service operations.
+This is a comprehensive ERPNext v15 application for managing ambulance service operations, built from the ground up to mirror the BAS Ambulance Service specifications.
 
-## Key Features
+## 🚑 Project Overview
 
-- **Fleet Management**: Track ambulances, availability, and maintenance.
-- **Dispatch Engine**: Intake emergency calls, triage, and dispatch ambulances.
-- **Crew Management**: Manage paramedic profiles, certifications, and shifts.
-- **Trip Sheets**: Record trip details, patient vitals, and procedures.
-- **Billing & Claims**: Automated billing and insurance claim tracking.
-- **Compliance Engine**: Automated tracking of vehicle fitness, drug licenses, and staff certifications.
-- **Reports & Dashboards**: Analytics for response time, fleet utilization, and revenue.
+The **BAS Ambulance Service Management** module digitizes the end-to-end operations of an ambulance service provider—from patient call intake and dispatch, through ambulance tracking and crew management, to billing, compliance, and fleet maintenance.
 
-## Installation
+## ⚙️ Versions & Dependencies
+- **Frappe Framework**: v15.x
+- **ERPNext**: v15.x
+- **Python**: 3.11+
+- **Database**: MariaDB / PostgreSQL
 
-1. Clone this repository into your bench's `apps` folder.
-2. Install the app to your site:
-   ```bash
-   bench get-app https://github.com/your-repo/bas_ambulance
-   bench install-app bas_ambulance
-   bench migrate
-   bench build
-   bench restart
-   ```
+## ✨ Key Features
 
-## DocTypes
+- **Fleet Management**: Track vehicle identities, equipment, and current operational status.
+- **Dispatch Engine**: Real-time intake of emergency calls with triage priority and automated ambulance assignment.
+- **Crew & Paramedic Management**: Detailed staff profiles, certifications tracking (BLS, ACLS, PALS), and shift allocation.
+- **Operational Trip Sheets**: Lifecycle recording of trips including vitals, procedures, medications, and handover.
+- **Billing & Insurance**: Seamless invoice generation linked to trips with insurer-wise claim tracking.
+- **Automated Compliance Engine**: 15 pre-seeded templates for vehicle fitness, drug licenses, and training renewals.
+- **Incidents & Maintenance**: Track adverse events and vehicle service cycles with automated status updates.
+- **Analytics & Reporting**: SLA adherence, fleet utilization, and profitability reports.
 
-- Ambulance Master
-- Ambulance Station
-- Patient Call Record
-- Ambulance Trip Sheet
-- Crew Member
-- Ambulance Maintenance Record
-- Ambulance Bill
-- Insurance Claim
-- Compliance Task
-- Incident Report
-- Drug & Supply Inventory
-- Shift Schedule
+## 🛠️ Installation
 
-## Workflows
+To install the app on your site:
 
-1. Dispatch Workflow
-2. Trip Workflow
-3. Maintenance Workflow
-4. Billing Workflow
-5. Insurance Claim Workflow
-6. Incident Investigation Workflow
-7. Compliance Workflow
+```bash
+bench get-app https://github.com/nick200555/Ambulance.git bas_ambulance
+bench --site [your-site-name] install-app bas_ambulance
+bench migrate
+bench build
+bench restart
+```
+
+## 📊 Module Architecture
+
+### Main DocTypes
+| DocType | Description |
+| --- | --- |
+| Ambulance Master | Central vehicle registry and equipment checklist |
+| Ambulance Station | Base/depot management |
+| Patient Call Record | Emergency intake and dispatch trigger |
+| Ambulance Trip Sheet | Core operational run sheet |
+| Crew Member | Staff profiles and certification tracker |
+| Compliance Task | Auto-generated regulatory reminders |
+| Insurance Claim | Reimbursement tracking |
+
+### Workflows
+- **Dispatch Workflow**: Received -> Dispatched -> En Route -> ... -> Completed
+- **Trip Workflow**: Draft -> In Progress -> Pending Review -> Approved -> Billed
+- **Compliance Workflow**: Open -> Assigned -> In Progress -> Completed/Overdue
+
+## 📡 API Overview
+Whitelisted APIs in `api.py`:
+- `dispatch_ambulance()`: Logic for assigning assets.
+- `nearest_ambulance_lookup()`: Geo-spatial search for available vehicles.
+- `generate_compliance_calendar()`: Internal job for task generation.
+
+---
+*Developed as part of the Seria Internship program.*
