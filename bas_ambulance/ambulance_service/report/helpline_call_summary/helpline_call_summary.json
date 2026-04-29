@@ -1,6 +1,7 @@
 {
+  "doctype": "Report",
   "name": "Helpline Call Summary",
-  "module": "BAS Ambulance Service",
+  "module": "Ambulance Service",
   "report_type": "Script Report",
   "ref_doctype": "Helpline Call Record",
   "is_standard": "Yes",
