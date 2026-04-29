@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "inventory_details_section",
+  "item_code",
+  "item_name",
+  "category",
+  "uom",
+  "column_break_id",
+  "ambulance_station_ref",
+  "batch_no",
+  "expiry_date",
+  "stock_status",
+  "section_stock",
+  "quantity_in_stock",
+  "minimum_stock_level",
+  "column_break_stock",
+  "last_replenished_date",
+  "replenished_by",
+  "storage_section",
+  "cold_chain_required",
+  "storage_temperature_c",
+  "remarks_section",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "inventory_details_section",
+   "fieldtype": "Section Break",
+   "label": "Inventory Details"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Drug\nOxygen\nConsumable\nEquipment\nPPE"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "Unit of Measure",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_id",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ambulance_station_ref",
+   "fieldtype": "Dynamic Link",
+   "label": "Ambulance / Station",
+   "options": "ref_doctype"
+  },
+  {
+   "fieldname": "ref_doctype",
+   "fieldtype": "Select",
+   "label": "Ref DocType",
+   "options": "Ambulance Master\nAmbulance Station",
+   "hidden": 1
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "label": "Batch No."
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "stock_status",
+   "fieldtype": "Select",
+   "label": "Stock Status",
+   "options": "Adequate\nLow Stock\nOut of Stock\nExpired",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_stock",
+   "fieldtype": "Section Break",
+   "label": "Stock Levels"
+  },
+  {
+   "fieldname": "quantity_in_stock",
+   "fieldtype": "Float",
+   "label": "Quantity in Stock"
+  },
+  {
+   "fieldname": "minimum_stock_level",
+   "fieldtype": "Float",
+   "label": "Minimum Stock Level"
+  },
+  {
+   "fieldname": "column_break_stock",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_replenished_date",
+   "fieldtype": "Date",
+   "label": "Last Replenished Date"
+  },
+  {
+   "fieldname": "replenished_by",
+   "fieldtype": "Link",
+   "label": "Replenished By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "storage_section",
+   "fieldtype": "Section Break",
+   "label": "Storage Requirements"
+  },
+  {
+   "fieldname": "cold_chain_required",
+   "fieldtype": "Check",
+   "label": "Cold Chain Required"
+  },
+  {
+   "fieldname": "storage_temperature_c",
+   "fieldtype": "Data",
+   "label": "Storage Temperature (°C)"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_pages": [],
+ "modified": "2026-04-27 10:45:00",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Drug and Supply Inventory",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Paramedic",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Fleet Manager"
+  },
+  {
+   "role": "System Manager",
+   "view_settings": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

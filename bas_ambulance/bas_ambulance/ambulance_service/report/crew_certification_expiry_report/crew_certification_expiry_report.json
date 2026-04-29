@@ -1,0 +1,10 @@
+{
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "Report",
+ "is_standard": "Yes",
+ "module": "Ambulance Service",
+ "name": "Crew Certification Expiry Report",
+ "query": "SELECT name, crew_member_name, role, certification_expiry, dl_expiry FROM `tabCrew Member` WHERE certification_expiry <= DATE_ADD(CURDATE(), INTERVAL 60 DAY) OR dl_expiry <= DATE_ADD(CURDATE(), INTERVAL 60 DAY)",
+ "ref_doctype": "Crew Member",
+ "report_type": "Query Report"
+}

@@ -1,0 +1,169 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:station_name",
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "station_details_section",
+  "station_name",
+  "station_code",
+  "station_head",
+  "contact_number",
+  "column_break_sd",
+  "is_24x7",
+  "operational_hours",
+  "location_section",
+  "address",
+  "city_district",
+  "column_break_loc",
+  "state",
+  "pincode",
+  "latitude",
+  "longitude",
+  "stats_section",
+  "total_ambulances",
+  "active_crew_count",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "station_details_section",
+   "fieldtype": "Section Break",
+   "label": "Station Details"
+  },
+  {
+   "fieldname": "station_name",
+   "fieldtype": "Data",
+   "label": "Station Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "station_code",
+   "fieldtype": "Data",
+   "label": "Station Code"
+  },
+  {
+   "fieldname": "station_head",
+   "fieldtype": "Link",
+   "label": "Station Head",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "column_break_sd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_24x7",
+   "fieldtype": "Check",
+   "label": "Is 24x7"
+  },
+  {
+   "fieldname": "operational_hours",
+   "fieldtype": "Data",
+   "label": "Operational Hours"
+  },
+  {
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Location Info"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "city_district",
+   "fieldtype": "Data",
+   "label": "City / District"
+  },
+  {
+   "fieldname": "column_break_loc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "stats_section",
+   "fieldtype": "Section Break",
+   "label": "Operational Stats"
+  },
+  {
+   "fieldname": "total_ambulances",
+   "fieldtype": "Int",
+   "label": "Total Ambulances",
+   "read_only": 1
+  },
+  {
+   "fieldname": "active_crew_count",
+   "fieldtype": "Int",
+   "label": "Active Crew Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_pages": [],
+ "modified": "2026-04-27 10:45:00",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Ambulance Station",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Fleet Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Dispatch Officer"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

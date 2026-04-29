@@ -1,0 +1,10 @@
+{
+ "creation": "2026-04-27 10:45:00",
+ "doc_type": "Ambulance Trip Sheet",
+ "doctype": "Print Format",
+ "format_type": "Jinja",
+ "is_standard": "Yes",
+ "module": "Ambulance Service",
+ "name": "Ambulance Trip Sheet",
+ "print_format_type": "Jinja"
+}

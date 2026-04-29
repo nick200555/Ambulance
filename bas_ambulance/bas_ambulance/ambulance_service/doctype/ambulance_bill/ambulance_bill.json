@@ -1,0 +1,206 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bill_details_section",
+  "naming_series",
+  "trip_sheet",
+  "patient_name",
+  "bill_date",
+  "column_break_bd",
+  "billing_mode",
+  "insurance_company",
+  "policy_card_number",
+  "pre_authorisation_no",
+  "charges_section",
+  "service_charges",
+  "amounts_section",
+  "gross_amount",
+  "discount_percentage",
+  "discount_amount",
+  "column_break_amt",
+  "net_amount",
+  "advance_received",
+  "balance_due",
+  "status_section",
+  "payment_status",
+  "erpnext_sales_invoice",
+  "remarks_section",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "bill_details_section",
+   "fieldtype": "Section Break",
+   "label": "Bill Information"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "ABILL-.YYYY.-"
+  },
+  {
+   "fieldname": "trip_sheet",
+   "fieldtype": "Link",
+   "label": "Trip Sheet",
+   "options": "Ambulance Trip Sheet"
+  },
+  {
+   "fetch_from": "trip_sheet.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "bill_date",
+   "fieldtype": "Date",
+   "label": "Bill Date"
+  },
+  {
+   "fieldname": "column_break_bd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "billing_mode",
+   "fieldtype": "Select",
+   "label": "Billing Mode",
+   "options": "Cash\nInsurance\nCGHS\nESI\nGovernment Scheme\nFree\nOther"
+  },
+  {
+   "fieldname": "insurance_company",
+   "fieldtype": "Link",
+   "label": "Insurance Company",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "policy_card_number",
+   "fieldtype": "Data",
+   "label": "Policy / Card Number"
+  },
+  {
+   "fieldname": "pre_authorisation_no",
+   "fieldtype": "Data",
+   "label": "Pre-Authorisation No."
+  },
+  {
+   "fieldname": "charges_section",
+   "fieldtype": "Section Break",
+   "label": "Service Charges"
+  },
+  {
+   "fieldname": "service_charges",
+   "fieldtype": "Table",
+   "label": "Service Charges",
+   "options": "Bill Service Line"
+  },
+  {
+   "fieldname": "amounts_section",
+   "fieldtype": "Section Break",
+   "label": "Billing Summary"
+  },
+  {
+   "fieldname": "gross_amount",
+   "fieldtype": "Currency",
+   "label": "Gross Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount_percentage",
+   "fieldtype": "Float",
+   "label": "Discount %"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount"
+  },
+  {
+   "fieldname": "column_break_amt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "label": "Net Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_received",
+   "fieldtype": "Currency",
+   "label": "Advance Received"
+  },
+  {
+   "fieldname": "balance_due",
+   "fieldtype": "Currency",
+   "label": "Balance Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status & Links"
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Unpaid\nPartial\nPaid\nWaived"
+  },
+  {
+   "fieldname": "erpnext_sales_invoice",
+   "fieldtype": "Link",
+   "label": "ERPNext Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_pages": [],
+ "is_submittable": 1,
+ "modified": "2026-04-27 10:45:00",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Ambulance Bill",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Billing Executive",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "System Manager",
+   "view_settings": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

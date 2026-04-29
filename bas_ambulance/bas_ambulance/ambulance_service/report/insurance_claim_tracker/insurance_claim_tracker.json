@@ -1,0 +1,10 @@
+{
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "Report",
+ "is_standard": "Yes",
+ "module": "Ambulance Service",
+ "name": "Insurance Claim Tracker",
+ "query": "SELECT name, insurer_scheme, claim_amount, approved_amount, submission_date, claim_status FROM `tabInsurance Claim` WHERE docstatus < 2",
+ "ref_doctype": "Insurance Claim",
+ "report_type": "Query Report"
+}

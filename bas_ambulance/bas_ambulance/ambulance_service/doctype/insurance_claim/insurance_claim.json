@@ -1,0 +1,202 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-04-27 10:45:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "claim_details_section",
+  "naming_series",
+  "ambulance_bill",
+  "insurer_scheme",
+  "policy_number",
+  "column_break_cd",
+  "claim_status",
+  "submission_date",
+  "acknowledgement_no",
+  "claim_amounts_section",
+  "claim_amount",
+  "approved_amount",
+  "column_break_amt",
+  "tds_deducted",
+  "net_received",
+  "query_section",
+  "query_received_date",
+  "query_remarks",
+  "approval_received_section",
+  "approval_date",
+  "payment_received_date",
+  "payment_reference",
+  "rejection_reason",
+  "checklist_section",
+  "documents_submitted"
+ ],
+ "fields": [
+  {
+   "fieldname": "claim_details_section",
+   "fieldtype": "Section Break",
+   "label": "Claim Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CLM-.YYYY.-"
+  },
+  {
+   "fieldname": "ambulance_bill",
+   "fieldtype": "Link",
+   "label": "Ambulance Bill",
+   "options": "Ambulance Bill"
+  },
+  {
+   "fieldname": "insurer_scheme",
+   "fieldtype": "Link",
+   "label": "Insurer / Scheme",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "label": "Policy Number"
+  },
+  {
+   "fieldname": "column_break_cd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "claim_status",
+   "fieldtype": "Select",
+   "label": "Claim Status",
+   "options": "Draft\nSubmitted\nUnder Query\nApproved\nRejected\nPartially Approved\nReceived"
+  },
+  {
+   "fieldname": "submission_date",
+   "fieldtype": "Date",
+   "label": "Submission Date"
+  },
+  {
+   "fieldname": "acknowledgement_no",
+   "fieldtype": "Data",
+   "label": "Acknowledgement No."
+  },
+  {
+   "fieldname": "claim_amounts_section",
+   "fieldtype": "Section Break",
+   "label": "Claim Amounts"
+  },
+  {
+   "fieldname": "claim_amount",
+   "fieldtype": "Currency",
+   "label": "Claim Amount"
+  },
+  {
+   "fieldname": "approved_amount",
+   "fieldtype": "Currency",
+   "label": "Approved Amount"
+  },
+  {
+   "fieldname": "column_break_amt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tds_deducted",
+   "fieldtype": "Currency",
+   "label": "TDS Deducted"
+  },
+  {
+   "fieldname": "net_received",
+   "fieldtype": "Currency",
+   "label": "Net Received",
+   "read_only": 1
+  },
+  {
+   "fieldname": "query_section",
+   "fieldtype": "Section Break",
+   "label": "Query & Investigation",
+   "depends_on": "eval:doc.claim_status == 'Under Query'"
+  },
+  {
+   "fieldname": "query_received_date",
+   "fieldtype": "Date",
+   "label": "Query Received Date"
+  },
+  {
+   "fieldname": "query_remarks",
+   "fieldtype": "Small Text",
+   "label": "Query Remarks"
+  },
+  {
+   "fieldname": "approval_received_section",
+   "fieldtype": "Section Break",
+   "label": "Approval & Receipt"
+  },
+  {
+   "fieldname": "approval_date",
+   "fieldtype": "Date",
+   "label": "Approval Date"
+  },
+  {
+   "fieldname": "payment_received_date",
+   "fieldtype": "Date",
+   "label": "Payment Received Date"
+  },
+  {
+   "fieldname": "payment_reference",
+   "fieldtype": "Data",
+   "label": "Payment Reference"
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Rejection Reason",
+   "depends_on": "eval:doc.claim_status == 'Rejected'"
+  },
+  {
+   "fieldname": "checklist_section",
+   "fieldtype": "Section Break",
+   "label": "Document Checklist"
+  },
+  {
+   "fieldname": "documents_submitted",
+   "fieldtype": "Table",
+   "label": "Documents Submitted",
+   "options": "Claim Document Checklist"
+  }
+ ],
+ "index_pages": [],
+ "is_submittable": 1,
+ "modified": "2026-04-27 10:45:00",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Insurance Claim",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Billing Executive",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "System Manager",
+   "view_settings": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,13 @@
+include *.txt
+include *.md
+recursive-include bas_ambulance *.html
+recursive-include bas_ambulance *.ico
+recursive-include bas_ambulance *.js
+recursive-include bas_ambulance *.json
+recursive-include bas_ambulance *.md
+recursive-include bas_ambulance *.png
+recursive-include bas_ambulance *.py
+recursive-include bas_ambulance *.svg
+recursive-include bas_ambulance *.txt
+recursive-include bas_ambulance *.css
+recursive-include bas_ambulance *.csv
