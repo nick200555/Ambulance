@@ -1,6 +1,6 @@
 {
   "name": "Telemedicine Consultation",
-  "module": "BAS Ambulance Service",
+  "module": "Ambulance Service",
   "doctype": "DocType",
   "is_submittable": 1,
   "autoname": "format:TELE-{YYYY}-{#####}",

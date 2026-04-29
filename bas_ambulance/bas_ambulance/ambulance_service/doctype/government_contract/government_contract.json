@@ -1,6 +1,6 @@
 {
   "name": "Government Contract",
-  "module": "BAS Ambulance Service",
+  "module": "Ambulance Service",
   "doctype": "DocType",
   "autoname": "format:CONT-{YYYY}-{###}",
   "fields": [

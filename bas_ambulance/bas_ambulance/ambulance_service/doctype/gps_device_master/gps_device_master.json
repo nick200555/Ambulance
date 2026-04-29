@@ -1,6 +1,6 @@
 {
   "name": "GPS Device Master",
-  "module": "BAS Ambulance Service",
+  "module": "Ambulance Service",
   "doctype": "DocType",
   "fields": [
     {"fieldname":"device_id","label":"Device ID","fieldtype":"Data","reqd":1},
