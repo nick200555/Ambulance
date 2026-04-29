@@ -1,81 +1,291 @@
 {
-  "name": "Helpline Call Record",
-  "module": "Ambulance Service",
-  "doctype": "DocType",
-  "is_submittable": 1,
-  "autoname": "format:CALL-{YYYY}{MM}{DD}-{####}",
-  "track_changes": 1,
-  "fields": [
-    {"fieldname":"helpline_number","label":"Helpline Number",
-     "fieldtype":"Select",
-     "options":"108\n102\n104\n112\n1033\n100\n181\n1298",
-     "reqd":1,"in_list_view":1,"bold":1},
-    {"fieldname":"call_datetime","label":"Call Date & Time",
-     "fieldtype":"Datetime","reqd":1,"default":"Now"},
-    {"fieldname":"call_status","label":"Call Status","fieldtype":"Select",
-     "options":"Received\nDispatched\nEn Route\nOn Scene\nTransporting\nCompleted\nCancelled\nMissed",
-     "default":"Received","in_list_view":1},
-    {"fieldname":"col_break_1","fieldtype":"Column Break"},
-    {"fieldname":"triage_priority","label":"Triage Priority",
-     "fieldtype":"Select",
-     "options":"P1 Critical\nP2 Urgent\nP3 Non-Urgent\nP4 Dead on Arrival",
-     "reqd":1,"in_list_view":1},
-    {"fieldname":"operator_name","label":"Operator",
-     "fieldtype":"Link","options":"Employee"},
-    {"fieldname":"assigned_ambulance","label":"Assigned Ambulance",
-     "fieldtype":"Link","options":"Ambulance Master"},
-    {"fieldname":"sec_caller","label":"Caller Information",
-     "fieldtype":"Section Break"},
-    {"fieldname":"caller_name","label":"Caller Name","fieldtype":"Data","reqd":1},
-    {"fieldname":"caller_phone","label":"Caller Phone","fieldtype":"Data","reqd":1},
-    {"fieldname":"relationship","label":"Relationship to Patient",
-     "fieldtype":"Select",
-     "options":"Self\nRelative\nBystander\nHospital\nPolice"},
-    {"fieldname":"sec_patient","label":"Patient Information",
-     "fieldtype":"Section Break"},
-    {"fieldname":"patient_name","label":"Patient Name","fieldtype":"Data"},
-    {"fieldname":"patient_age","label":"Age","fieldtype":"Int"},
-    {"fieldname":"patient_gender","label":"Gender","fieldtype":"Select",
-     "options":"Male\nFemale\nOther"},
-    {"fieldname":"nature_of_emergency","label":"Nature of Emergency",
-     "fieldtype":"Select",
-     "options":"Cardiac\nTrauma\nAccident\nObstetric\nNeonatal\nRespiratory\nNeurological\nAnimal Bite\nHighway Accident\nWomen Safety\nMental Health\nGeneral","reqd":1},
-    {"fieldname":"sec_location","label":"Location","fieldtype":"Section Break"},
-    {"fieldname":"pickup_address","label":"Pickup Address",
-     "fieldtype":"Small Text","reqd":1},
-    {"fieldname":"pickup_latitude","label":"Latitude","fieldtype":"Float"},
-    {"fieldname":"pickup_longitude","label":"Longitude","fieldtype":"Float"},
-    {"fieldname":"nearest_landmark","label":"Nearest Landmark",
-     "fieldtype":"Data"},
-    {"fieldname":"state","label":"State","fieldtype":"Link","options":"State"},
-    {"fieldname":"district","label":"District","fieldtype":"Data"},
-    {"fieldname":"area_type","label":"Area Type","fieldtype":"Select",
-     "options":"Urban\nRural\nHighway\nRemote\nWaterway"},
-    {"fieldname":"sec_dispatch","label":"Dispatch","fieldtype":"Section Break"},
-    {"fieldname":"destination_hospital","label":"Destination Hospital",
-     "fieldtype":"Link","options":"Customer"},
-    {"fieldname":"dispatch_time","label":"Dispatch Time","fieldtype":"Datetime"},
-    {"fieldname":"eta_minutes","label":"ETA (minutes)","fieldtype":"Int"},
-    {"fieldname":"sec_flags","label":"Special Flags","fieldtype":"Section Break"},
-    {"fieldname":"is_maternity_case","label":"102 Maternity Case",
-     "fieldtype":"Check"},
-    {"fieldname":"is_neonatal","label":"Neonatal Transfer","fieldtype":"Check"},
-    {"fieldname":"is_highway","label":"Highway Incident (1033)",
-     "fieldtype":"Check"},
-    {"fieldname":"highway_name","label":"Highway / NH No.","fieldtype":"Data",
-     "depends_on":"eval:doc.is_highway"},
-    {"fieldname":"is_women_safety","label":"Women Safety (181)",
-     "fieldtype":"Check"},
-    {"fieldname":"shelter_required","label":"Shelter Required",
-     "fieldtype":"Check","depends_on":"eval:doc.is_women_safety"}
-  ],
-  "permissions": [
-    {"role":"Call Centre Agent","read":1,"write":1,"create":1,"submit":0},
-    {"role":"Dispatch Officer","read":1,"write":1,"create":1,"submit":1},
-    {"role":"CAD Operator","read":1,"write":1,"create":1,"submit":0},
-    {"role":"Paramedic","read":1,"write":0},
-    {"role":"System Manager","read":1,"write":1,"create":1,"delete":1,"submit":1}
-  ],
-  "title_field": "name",
-  "naming_rule": "Expression (old style)"
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CALL-{YYYY}{MM}{DD}-{####}",
+ "creation": "2026-04-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "helpline_number",
+  "call_datetime",
+  "call_status",
+  "col_break_1",
+  "triage_priority",
+  "operator_name",
+  "assigned_ambulance",
+  "sec_caller",
+  "caller_name",
+  "caller_phone",
+  "relationship",
+  "sec_patient",
+  "patient_name",
+  "patient_age",
+  "patient_gender",
+  "nature_of_emergency",
+  "sec_location",
+  "pickup_address",
+  "pickup_latitude",
+  "pickup_longitude",
+  "nearest_landmark",
+  "state",
+  "district",
+  "area_type",
+  "sec_dispatch",
+  "destination_hospital",
+  "dispatch_time",
+  "eta_minutes",
+  "sec_flags",
+  "is_maternity_case",
+  "is_neonatal",
+  "is_highway",
+  "highway_name",
+  "is_women_safety",
+  "shelter_required"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "helpline_number",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Helpline Number",
+   "options": "108\n102\n104\n112\n1033\n100\n181\n1298",
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "call_datetime",
+   "fieldtype": "Datetime",
+   "label": "Call Date & Time",
+   "reqd": 1
+  },
+  {
+   "default": "Received",
+   "fieldname": "call_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Call Status",
+   "options": "Received\nDispatched\nEn Route\nOn Scene\nTransporting\nCompleted\nCancelled\nMissed"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "triage_priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Triage Priority",
+   "options": "P1 Critical\nP2 Urgent\nP3 Non-Urgent\nP4 Dead on Arrival",
+   "reqd": 1
+  },
+  {
+   "fieldname": "operator_name",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "assigned_ambulance",
+   "fieldtype": "Link",
+   "label": "Assigned Ambulance",
+   "options": "Ambulance Master"
+  },
+  {
+   "fieldname": "sec_caller",
+   "fieldtype": "Section Break",
+   "label": "Caller Information"
+  },
+  {
+   "fieldname": "caller_name",
+   "fieldtype": "Data",
+   "label": "Caller Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "caller_phone",
+   "fieldtype": "Data",
+   "label": "Caller Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "relationship",
+   "fieldtype": "Select",
+   "label": "Relationship to Patient",
+   "options": "Self\nRelative\nBystander\nHospital\nPolice"
+  },
+  {
+   "fieldname": "sec_patient",
+   "fieldtype": "Section Break",
+   "label": "Patient Information"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "fieldname": "patient_age",
+   "fieldtype": "Int",
+   "label": "Age"
+  },
+  {
+   "fieldname": "patient_gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOther"
+  },
+  {
+   "fieldname": "nature_of_emergency",
+   "fieldtype": "Select",
+   "label": "Nature of Emergency",
+   "options": "Cardiac\nTrauma\nAccident\nObstetric\nNeonatal\nRespiratory\nNeurological\nAnimal Bite\nHighway Accident\nWomen Safety\nMental Health\nGeneral",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_location",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "pickup_address",
+   "fieldtype": "Small Text",
+   "label": "Pickup Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pickup_latitude",
+   "fieldtype": "Float",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "pickup_longitude",
+   "fieldtype": "Float",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "nearest_landmark",
+   "fieldtype": "Data",
+   "label": "Nearest Landmark"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fieldname": "area_type",
+   "fieldtype": "Select",
+   "label": "Area Type",
+   "options": "Urban\nRural\nHighway\nRemote\nWaterway"
+  },
+  {
+   "fieldname": "sec_dispatch",
+   "fieldtype": "Section Break",
+   "label": "Dispatch"
+  },
+  {
+   "fieldname": "destination_hospital",
+   "fieldtype": "Link",
+   "label": "Destination Hospital",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "dispatch_time",
+   "fieldtype": "Datetime",
+   "label": "Dispatch Time"
+  },
+  {
+   "fieldname": "eta_minutes",
+   "fieldtype": "Int",
+   "label": "ETA (minutes)"
+  },
+  {
+   "fieldname": "sec_flags",
+   "fieldtype": "Section Break",
+   "label": "Special Flags"
+  },
+  {
+   "fieldname": "is_maternity_case",
+   "fieldtype": "Check",
+   "label": "102 Maternity Case"
+  },
+  {
+   "fieldname": "is_neonatal",
+   "fieldtype": "Check",
+   "label": "Neonatal Transfer"
+  },
+  {
+   "fieldname": "is_highway",
+   "fieldtype": "Check",
+   "label": "Highway Incident (1033)"
+  },
+  {
+   "depends_on": "eval:doc.is_highway",
+   "fieldname": "highway_name",
+   "fieldtype": "Data",
+   "label": "Highway / NH No."
+  },
+  {
+   "fieldname": "is_women_safety",
+   "fieldtype": "Check",
+   "label": "Women Safety (181)"
+  },
+  {
+   "depends_on": "eval:doc.is_women_safety",
+   "fieldname": "shelter_required",
+   "fieldtype": "Check",
+   "label": "Shelter Required"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Helpline Call Record",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Call Centre Agent",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Dispatch Officer",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "CAD Operator",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Paramedic"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
 }

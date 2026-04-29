@@ -1,31 +1,173 @@
 {
-  "name": "GPS Device Master",
-  "module": "Ambulance Service",
-  "doctype": "DocType",
-  "fields": [
-    {"fieldname":"device_id","label":"Device ID","fieldtype":"Data","reqd":1},
-    {"fieldname":"imei_number","label":"IMEI Number","fieldtype":"Data","reqd":1},
-    {"fieldname":"device_make_model","label":"Make / Model","fieldtype":"Data"},
-    {"fieldname":"sim_number","label":"SIM Number","fieldtype":"Data"},
-    {"fieldname":"telecom_operator","label":"Telecom Operator","fieldtype":"Select",
-     "options":"Airtel\nBSNL\nJio\nVi\nOther"},
-    {"fieldname":"data_plan_expiry","label":"Data Plan Expiry","fieldtype":"Date"},
-    {"fieldname":"assigned_ambulance","label":"Assigned Ambulance",
-     "fieldtype":"Link","options":"Ambulance Master"},
-    {"fieldname":"device_status","label":"Device Status","fieldtype":"Select",
-     "options":"Active\nInactive\nFaulty\nReplaced","default":"Active","in_list_view":1},
-    {"fieldname":"last_ping_time","label":"Last Ping Time","fieldtype":"Datetime",
-     "read_only":1},
-    {"fieldname":"last_known_lat","label":"Last Latitude","fieldtype":"Float",
-     "read_only":1},
-    {"fieldname":"last_known_lng","label":"Last Longitude","fieldtype":"Float",
-     "read_only":1},
-    {"fieldname":"installation_date","label":"Installation Date","fieldtype":"Date"},
-    {"fieldname":"warranty_expiry","label":"Warranty Expiry","fieldtype":"Date"},
-    {"fieldname":"vendor","label":"Vendor","fieldtype":"Link","options":"Supplier"}
-  ],
-  "permissions": [
-    {"role":"Fleet Manager","read":1,"write":1,"create":1},
-    {"role":"System Manager","read":1,"write":1,"create":1,"delete":1}
-  ]
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:device_id",
+ "creation": "2026-04-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "device_section",
+  "device_id",
+  "imei_number",
+  "device_make_model",
+  "column_break_dev",
+  "device_status",
+  "installation_date",
+  "warranty_expiry",
+  "sim_section",
+  "sim_number",
+  "telecom_operator",
+  "data_plan_expiry",
+  "column_break_sim",
+  "assigned_ambulance",
+  "vendor",
+  "tracking_section",
+  "last_ping_time",
+  "last_known_lat",
+  "last_known_lng"
+ ],
+ "fields": [
+  {
+   "fieldname": "device_section",
+   "fieldtype": "Section Break",
+   "label": "Device Details"
+  },
+  {
+   "fieldname": "device_id",
+   "fieldtype": "Data",
+   "label": "Device ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "imei_number",
+   "fieldtype": "Data",
+   "label": "IMEI Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "device_make_model",
+   "fieldtype": "Data",
+   "label": "Make / Model"
+  },
+  {
+   "fieldname": "column_break_dev",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "device_status",
+   "fieldtype": "Select",
+   "label": "Device Status",
+   "options": "Active\nInactive\nFaulty\nReplaced",
+   "default": "Active",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "installation_date",
+   "fieldtype": "Date",
+   "label": "Installation Date"
+  },
+  {
+   "fieldname": "warranty_expiry",
+   "fieldtype": "Date",
+   "label": "Warranty Expiry"
+  },
+  {
+   "fieldname": "sim_section",
+   "fieldtype": "Section Break",
+   "label": "SIM & Network"
+  },
+  {
+   "fieldname": "sim_number",
+   "fieldtype": "Data",
+   "label": "SIM Number"
+  },
+  {
+   "fieldname": "telecom_operator",
+   "fieldtype": "Select",
+   "label": "Telecom Operator",
+   "options": "Airtel\nBSNL\nJio\nVi\nOther"
+  },
+  {
+   "fieldname": "data_plan_expiry",
+   "fieldtype": "Date",
+   "label": "Data Plan Expiry"
+  },
+  {
+   "fieldname": "column_break_sim",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_ambulance",
+   "fieldtype": "Link",
+   "label": "Assigned Ambulance",
+   "options": "Ambulance Master"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "tracking_section",
+   "fieldtype": "Section Break",
+   "label": "Live Tracking Data"
+  },
+  {
+   "fieldname": "last_ping_time",
+   "fieldtype": "Datetime",
+   "label": "Last Ping Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_known_lat",
+   "fieldtype": "Float",
+   "label": "Last Latitude",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_known_lng",
+   "fieldtype": "Float",
+   "label": "Last Longitude",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "GPS Device Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
 }

@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:FRP-{YYYY}{MM}{DD}-{####}",
+ "creation": "2026-04-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "responder_section",
+  "responder_name",
+  "responder_id",
+  "id_type",
+  "column_break_resp",
+  "date_of_enrolment",
+  "status",
+  "assigned_zone",
+  "certification_section",
+  "certification_level",
+  "certification_number",
+  "certification_expiry",
+  "column_break_cert",
+  "training_institution",
+  "last_refresher_date",
+  "next_renewal_due",
+  "contact_section",
+  "mobile_number",
+  "emergency_contact",
+  "column_break_contact",
+  "address",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "responder_section",
+   "fieldtype": "Section Break",
+   "label": "Responder Details"
+  },
+  {
+   "fieldname": "responder_name",
+   "fieldtype": "Data",
+   "label": "Responder Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "responder_id",
+   "fieldtype": "Data",
+   "label": "Responder ID"
+  },
+  {
+   "fieldname": "id_type",
+   "fieldtype": "Select",
+   "label": "ID Type",
+   "options": "Aadhar\nPassport\nDriving License\nOther"
+  },
+  {
+   "fieldname": "column_break_resp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_of_enrolment",
+   "fieldtype": "Date",
+   "label": "Date of Enrolment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive\nSuspended",
+   "default": "Active"
+  },
+  {
+   "fieldname": "assigned_zone",
+   "fieldtype": "Data",
+   "label": "Assigned Zone / Area"
+  },
+  {
+   "fieldname": "certification_section",
+   "fieldtype": "Section Break",
+   "label": "Certification Details"
+  },
+  {
+   "fieldname": "certification_level",
+   "fieldtype": "Select",
+   "label": "Certification Level",
+   "options": "Basic First Aid\nBLS\nALS\nPALS"
+  },
+  {
+   "fieldname": "certification_number",
+   "fieldtype": "Data",
+   "label": "Certification Number"
+  },
+  {
+   "fieldname": "certification_expiry",
+   "fieldtype": "Date",
+   "label": "Certification Expiry"
+  },
+  {
+   "fieldname": "column_break_cert",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "training_institution",
+   "fieldtype": "Data",
+   "label": "Training Institution"
+  },
+  {
+   "fieldname": "last_refresher_date",
+   "fieldtype": "Date",
+   "label": "Last Refresher Date"
+  },
+  {
+   "fieldname": "next_renewal_due",
+   "fieldtype": "Date",
+   "label": "Next Renewal Due"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "emergency_contact",
+   "fieldtype": "Data",
+   "label": "Emergency Contact"
+  },
+  {
+   "fieldname": "column_break_contact",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "First Responder Programme",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Officer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

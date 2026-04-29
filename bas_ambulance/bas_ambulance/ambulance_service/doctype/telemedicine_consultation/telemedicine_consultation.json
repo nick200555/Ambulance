@@ -1,44 +1,168 @@
 {
-  "name": "Telemedicine Consultation",
-  "module": "Ambulance Service",
-  "doctype": "DocType",
-  "is_submittable": 1,
-  "autoname": "format:TELE-{YYYY}-{#####}",
-  "fields": [
-    {"fieldname":"helpline_call","label":"Helpline Call",
-     "fieldtype":"Link","options":"Helpline Call Record"},
-    {"fieldname":"consultation_datetime","label":"Consultation Date & Time",
-     "fieldtype":"Datetime","reqd":1,"default":"Now"},
-    {"fieldname":"consulting_doctor","label":"Consulting Doctor",
-     "fieldtype":"Link","options":"Crew Member","reqd":1},
-    {"fieldname":"speciality","label":"Speciality","fieldtype":"Select",
-     "options":"General\nCardiology\nGynaecology\nPaediatrics\nPsychiatry\nOrthopaedics\nDermatology\nOther"},
-    {"fieldname":"duration_minutes","label":"Duration (min)","fieldtype":"Int"},
-    {"fieldname":"consultation_status","label":"Status","fieldtype":"Select",
-     "options":"In Progress\nCompleted\nReferred\nAbandoned",
-     "default":"In Progress","in_list_view":1},
-    {"fieldname":"sec_patient","label":"Patient","fieldtype":"Section Break"},
-    {"fieldname":"patient_name","label":"Patient Name","fieldtype":"Data"},
-    {"fieldname":"patient_age","label":"Age","fieldtype":"Int"},
-    {"fieldname":"patient_gender","label":"Gender","fieldtype":"Select",
-     "options":"Male\nFemale\nOther"},
-    {"fieldname":"chief_complaint","label":"Chief Complaint",
-     "fieldtype":"Small Text","reqd":1},
-    {"fieldname":"sec_advice","label":"Advice & Prescription","fieldtype":"Section Break"},
-    {"fieldname":"advice_given","label":"Advice Given","fieldtype":"Text Editor"},
-    {"fieldname":"prescription","label":"Prescription","fieldtype":"Text Editor"},
-    {"fieldname":"referral_required","label":"Referral Required","fieldtype":"Check"},
-    {"fieldname":"referred_to_hospital","label":"Referred to Hospital",
-     "fieldtype":"Link","options":"Customer",
-     "depends_on":"eval:doc.referral_required"},
-    {"fieldname":"ambulance_dispatched","label":"Ambulance Dispatched",
-     "fieldtype":"Check"},
-    {"fieldname":"followup_required","label":"Follow-up Required","fieldtype":"Check"},
-    {"fieldname":"followup_date","label":"Follow-up Date","fieldtype":"Date",
-     "depends_on":"eval:doc.followup_required"}
-  ],
-  "permissions": [
-    {"role":"Call Centre Agent","read":1,"write":1,"create":1},
-    {"role":"System Manager","read":1,"write":1,"create":1,"delete":1,"submit":1}
-  ]
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:TELE-{YYYY}-{#####}",
+ "creation": "2026-04-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "helpline_call",
+  "consultation_datetime",
+  "consulting_doctor",
+  "speciality",
+  "duration_minutes",
+  "consultation_status",
+  "sec_patient",
+  "patient_name",
+  "patient_age",
+  "patient_gender",
+  "chief_complaint",
+  "sec_advice",
+  "advice_given",
+  "prescription",
+  "referral_required",
+  "referred_to_hospital",
+  "ambulance_dispatched",
+  "followup_required",
+  "followup_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "helpline_call",
+   "fieldtype": "Link",
+   "label": "Helpline Call",
+   "options": "Helpline Call Record"
+  },
+  {
+   "default": "Now",
+   "fieldname": "consultation_datetime",
+   "fieldtype": "Datetime",
+   "label": "Consultation Date & Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "consulting_doctor",
+   "fieldtype": "Link",
+   "label": "Consulting Doctor",
+   "options": "Crew Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "speciality",
+   "fieldtype": "Select",
+   "label": "Speciality",
+   "options": "General\nCardiology\nGynaecology\nPaediatrics\nPsychiatry\nOrthopaedics\nDermatology\nOther"
+  },
+  {
+   "fieldname": "duration_minutes",
+   "fieldtype": "Int",
+   "label": "Duration (min)"
+  },
+  {
+   "default": "In Progress",
+   "fieldname": "consultation_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "In Progress\nCompleted\nReferred\nAbandoned"
+  },
+  {
+   "fieldname": "sec_patient",
+   "fieldtype": "Section Break",
+   "label": "Patient"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "fieldname": "patient_age",
+   "fieldtype": "Int",
+   "label": "Age"
+  },
+  {
+   "fieldname": "patient_gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOther"
+  },
+  {
+   "fieldname": "chief_complaint",
+   "fieldtype": "Small Text",
+   "label": "Chief Complaint",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_advice",
+   "fieldtype": "Section Break",
+   "label": "Advice & Prescription"
+  },
+  {
+   "fieldname": "advice_given",
+   "fieldtype": "Text Editor",
+   "label": "Advice Given"
+  },
+  {
+   "fieldname": "prescription",
+   "fieldtype": "Text Editor",
+   "label": "Prescription"
+  },
+  {
+   "fieldname": "referral_required",
+   "fieldtype": "Check",
+   "label": "Referral Required"
+  },
+  {
+   "depends_on": "eval:doc.referral_required",
+   "fieldname": "referred_to_hospital",
+   "fieldtype": "Link",
+   "label": "Referred to Hospital",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "ambulance_dispatched",
+   "fieldtype": "Check",
+   "label": "Ambulance Dispatched"
+  },
+  {
+   "fieldname": "followup_required",
+   "fieldtype": "Check",
+   "label": "Follow-up Required"
+  },
+  {
+   "depends_on": "eval:doc.followup_required",
+   "fieldname": "followup_date",
+   "fieldtype": "Date",
+   "label": "Follow-up Date"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Telemedicine Consultation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Call Centre Agent",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
 }

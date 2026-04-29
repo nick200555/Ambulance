@@ -1,26 +1,144 @@
 {
-  "name": "Ambulance Dispatch",
-  "module": "Ambulance Service",
-  "doctype": "DocType",
-  "is_submittable": 0,
-  "autoname": "format:DISP-{YYYY}{MM}{DD}-{####}",
-  "track_changes": 1,
-  "fields": [
-    {"fieldname":"helpline_call","label":"Helpline Call",
-     "fieldtype":"Link","options":"Helpline Call Record","reqd":1},
-    {"fieldname":"dispatch_datetime","label":"Dispatch Date & Time",
-     "fieldtype":"Datetime","reqd":1},
-    {"fieldname":"assigned_ambulance","label":"Assigned Ambulance",
-     "fieldtype":"Link","options":"Ambulance Master","reqd":1},
-    {"fieldname":"dispatch_station","label":"Dispatch Station",
-     "fieldtype":"Link","options":"Ambulance Station","reqd":1},
-    {"fieldname":"dispatch_mode","label":"Dispatch Mode",
-     "fieldtype":"Select","options":"Manual\nAutomated CAD"},
-    {"fieldname":"dispatch_status","label":"Dispatch Status",
-     "fieldtype":"Select","options":"Assigned\nAccepted\nDeclined\nEn Route","default":"Assigned"}
-  ],
-  "permissions": [
-    {"role":"Dispatch Officer","read":1,"write":1,"create":1},
-    {"role":"System Manager","read":1,"write":1,"create":1,"delete":1}
-  ]
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:DISP-{YYYY}{MM}{DD}-{####}",
+ "creation": "2026-04-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "dispatch_section",
+  "helpline_call",
+  "dispatch_datetime",
+  "dispatch_mode",
+  "column_break_disp",
+  "dispatch_status",
+  "assigned_ambulance",
+  "dispatch_station",
+  "crew_section",
+  "crew_lead",
+  "crew_notes",
+  "amend_section",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "dispatch_section",
+   "fieldtype": "Section Break",
+   "label": "Dispatch Details"
+  },
+  {
+   "fieldname": "helpline_call",
+   "fieldtype": "Link",
+   "label": "Patient Call Record",
+   "options": "Patient Call Record",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dispatch_datetime",
+   "fieldtype": "Datetime",
+   "label": "Dispatch Date & Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dispatch_mode",
+   "fieldtype": "Select",
+   "label": "Dispatch Mode",
+   "options": "Manual\nAutomated CAD"
+  },
+  {
+   "fieldname": "column_break_disp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dispatch_status",
+   "fieldtype": "Select",
+   "label": "Dispatch Status",
+   "options": "Assigned\nAccepted\nDeclined\nEn Route\nOn Scene\nCompleted",
+   "default": "Assigned",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "assigned_ambulance",
+   "fieldtype": "Link",
+   "label": "Assigned Ambulance",
+   "options": "Ambulance Master",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dispatch_station",
+   "fieldtype": "Link",
+   "label": "Dispatch Station",
+   "options": "Ambulance Station",
+   "reqd": 1
+  },
+  {
+   "fieldname": "crew_section",
+   "fieldtype": "Section Break",
+   "label": "Crew Information"
+  },
+  {
+   "fieldname": "crew_lead",
+   "fieldtype": "Link",
+   "label": "Crew Lead",
+   "options": "Crew Member"
+  },
+  {
+   "fieldname": "crew_notes",
+   "fieldtype": "Small Text",
+   "label": "Crew Notes"
+  },
+  {
+   "fieldname": "amend_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Ambulance Dispatch",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Ambulance Dispatch",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dispatch Officer",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
 }

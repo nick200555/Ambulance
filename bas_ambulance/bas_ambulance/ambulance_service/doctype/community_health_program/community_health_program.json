@@ -1,0 +1,167 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CHP-{YYYY}{MM}{DD}-{####}",
+ "creation": "2026-04-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "program_section",
+  "program_name",
+  "program_code",
+  "program_type",
+  "column_break_prg",
+  "start_date",
+  "end_date",
+  "status",
+  "coordinator_section",
+  "coordinator_name",
+  "contact_number",
+  "station",
+  "column_break_coord",
+  "target_area",
+  "beneficiaries_enrolled",
+  "funding_source",
+  "description_section",
+  "description",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "program_section",
+   "fieldtype": "Section Break",
+   "label": "Program Details"
+  },
+  {
+   "fieldname": "program_name",
+   "fieldtype": "Data",
+   "label": "Program Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "program_code",
+   "fieldtype": "Data",
+   "label": "Program Code"
+  },
+  {
+   "fieldname": "program_type",
+   "fieldtype": "Select",
+   "label": "Program Type",
+   "options": "Awareness Camp\nFirst Aid Training\nVaccination Drive\nHealth Screening\nOther"
+  },
+  {
+   "fieldname": "column_break_prg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Planned\nOngoing\nCompleted\nCancelled",
+   "default": "Planned"
+  },
+  {
+   "fieldname": "coordinator_section",
+   "fieldtype": "Section Break",
+   "label": "Coordinator & Coverage"
+  },
+  {
+   "fieldname": "coordinator_name",
+   "fieldtype": "Data",
+   "label": "Coordinator Name"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "station",
+   "fieldtype": "Link",
+   "label": "Base Station",
+   "options": "Ambulance Station"
+  },
+  {
+   "fieldname": "column_break_coord",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "target_area",
+   "fieldtype": "Data",
+   "label": "Target Area / Location"
+  },
+  {
+   "fieldname": "beneficiaries_enrolled",
+   "fieldtype": "Int",
+   "label": "Beneficiaries Enrolled"
+  },
+  {
+   "fieldname": "funding_source",
+   "fieldtype": "Data",
+   "label": "Funding Source"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Program Description"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Community Health Program",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Officer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,40 +1,183 @@
 {
-  "name": "Government Contract",
-  "module": "Ambulance Service",
-  "doctype": "DocType",
-  "autoname": "format:CONT-{YYYY}-{###}",
-  "fields": [
-    {"fieldname":"contract_name","label":"Contract Name","fieldtype":"Data","reqd":1},
-    {"fieldname":"government_body","label":"Government Body","fieldtype":"Data","reqd":1},
-    {"fieldname":"state","label":"State","fieldtype":"Link","options":"State","reqd":1},
-    {"fieldname":"helplines_covered","label":"Helplines Covered",
-     "fieldtype":"MultiSelect",
-     "options":"108\n102\n104\n112\n1033\n181\nMMU"},
-    {"fieldname":"col_break_1","fieldtype":"Column Break"},
-    {"fieldname":"contract_status","label":"Status","fieldtype":"Select",
-     "options":"Active\nExpired\nUnder Renewal\nTerminated",
-     "default":"Active","in_list_view":1},
-    {"fieldname":"contract_start_date","label":"Start Date","fieldtype":"Date","reqd":1},
-    {"fieldname":"contract_end_date","label":"End Date","fieldtype":"Date","reqd":1},
-    {"fieldname":"sec_sla","label":"SLA Terms","fieldtype":"Section Break"},
-    {"fieldname":"committed_fleet_size","label":"Committed Fleet Size",
-     "fieldtype":"Int"},
-    {"fieldname":"committed_stations","label":"Committed Stations","fieldtype":"Int"},
-    {"fieldname":"sla_response_time_min","label":"SLA Response Time (min)",
-     "fieldtype":"Int"},
-    {"fieldname":"sla_uptime_pct","label":"SLA Uptime (%)","fieldtype":"Float"},
-    {"fieldname":"penalty_per_breach","label":"Penalty per SLA Breach (INR)",
-     "fieldtype":"Currency"},
-    {"fieldname":"sec_finance","label":"Finance","fieldtype":"Section Break"},
-    {"fieldname":"contract_value","label":"Contract Value (INR)","fieldtype":"Currency"},
-    {"fieldname":"payment_schedule","label":"Payment Schedule","fieldtype":"Select",
-     "options":"Monthly\nQuarterly\nAnnual"},
-    {"fieldname":"tender_reference","label":"Tender Reference","fieldtype":"Data"},
-    {"fieldname":"contract_document","label":"Contract Document","fieldtype":"Attach"}
-  ],
-  "permissions": [
-    {"role":"System Manager","read":1,"write":1,"create":1,"delete":1},
-    {"role":"Fleet Manager","read":1},
-    {"role":"Accounts Manager","read":1}
-  ]
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CONT-{YYYY}-{###}",
+ "creation": "2026-04-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "contract_section",
+  "contract_name",
+  "government_body",
+  "state",
+  "helplines_covered",
+  "column_break_1",
+  "contract_status",
+  "contract_start_date",
+  "contract_end_date",
+  "sla_section",
+  "committed_fleet_size",
+  "committed_stations",
+  "sla_response_time_min",
+  "column_break_sla",
+  "sla_uptime_pct",
+  "penalty_per_breach",
+  "finance_section",
+  "contract_value",
+  "payment_schedule",
+  "column_break_fin",
+  "tender_reference",
+  "contract_document"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Details"
+  },
+  {
+   "fieldname": "contract_name",
+   "fieldtype": "Data",
+   "label": "Contract Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "government_body",
+   "fieldtype": "Data",
+   "label": "Government Body",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "helplines_covered",
+   "fieldtype": "Data",
+   "label": "Helplines Covered"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nExpired\nUnder Renewal\nTerminated",
+   "default": "Active",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "contract_start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract_end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sla_section",
+   "fieldtype": "Section Break",
+   "label": "SLA Terms"
+  },
+  {
+   "fieldname": "committed_fleet_size",
+   "fieldtype": "Int",
+   "label": "Committed Fleet Size"
+  },
+  {
+   "fieldname": "committed_stations",
+   "fieldtype": "Int",
+   "label": "Committed Stations"
+  },
+  {
+   "fieldname": "sla_response_time_min",
+   "fieldtype": "Int",
+   "label": "SLA Response Time (min)"
+  },
+  {
+   "fieldname": "column_break_sla",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sla_uptime_pct",
+   "fieldtype": "Float",
+   "label": "SLA Uptime (%)"
+  },
+  {
+   "fieldname": "penalty_per_breach",
+   "fieldtype": "Currency",
+   "label": "Penalty per SLA Breach (INR)"
+  },
+  {
+   "fieldname": "finance_section",
+   "fieldtype": "Section Break",
+   "label": "Finance"
+  },
+  {
+   "fieldname": "contract_value",
+   "fieldtype": "Currency",
+   "label": "Contract Value (INR)"
+  },
+  {
+   "fieldname": "payment_schedule",
+   "fieldtype": "Select",
+   "label": "Payment Schedule",
+   "options": "Monthly\nQuarterly\nAnnual"
+  },
+  {
+   "fieldname": "column_break_fin",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tender_reference",
+   "fieldtype": "Data",
+   "label": "Tender Reference"
+  },
+  {
+   "fieldname": "contract_document",
+   "fieldtype": "Attach",
+   "label": "Contract Document"
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Government Contract",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Fleet Manager"
+  },
+  {
+   "read": 1,
+   "role": "Accounts Manager"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
 }

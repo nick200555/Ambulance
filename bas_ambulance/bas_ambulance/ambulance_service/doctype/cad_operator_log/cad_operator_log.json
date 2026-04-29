@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CAD-{YYYY}{MM}{DD}-{####}",
+ "creation": "2026-04-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator_section",
+  "operator_name",
+  "operator_id",
+  "shift_date",
+  "column_break_op",
+  "shift_start_time",
+  "shift_end_time",
+  "station",
+  "call_log_section",
+  "total_calls_received",
+  "total_dispatches_made",
+  "escalations_raised",
+  "column_break_cl",
+  "avg_response_time_min",
+  "system_used",
+  "notes_section",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "operator_section",
+   "fieldtype": "Section Break",
+   "label": "Operator Details"
+  },
+  {
+   "fieldname": "operator_name",
+   "fieldtype": "Data",
+   "label": "Operator Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "operator_id",
+   "fieldtype": "Data",
+   "label": "Operator ID"
+  },
+  {
+   "fieldname": "shift_date",
+   "fieldtype": "Date",
+   "label": "Shift Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_op",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shift_start_time",
+   "fieldtype": "Time",
+   "label": "Shift Start Time"
+  },
+  {
+   "fieldname": "shift_end_time",
+   "fieldtype": "Time",
+   "label": "Shift End Time"
+  },
+  {
+   "fieldname": "station",
+   "fieldtype": "Link",
+   "label": "Station",
+   "options": "Ambulance Station"
+  },
+  {
+   "fieldname": "call_log_section",
+   "fieldtype": "Section Break",
+   "label": "Call Activity"
+  },
+  {
+   "fieldname": "total_calls_received",
+   "fieldtype": "Int",
+   "label": "Total Calls Received"
+  },
+  {
+   "fieldname": "total_dispatches_made",
+   "fieldtype": "Int",
+   "label": "Total Dispatches Made"
+  },
+  {
+   "fieldname": "escalations_raised",
+   "fieldtype": "Int",
+   "label": "Escalations Raised"
+  },
+  {
+   "fieldname": "column_break_cl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "avg_response_time_min",
+   "fieldtype": "Float",
+   "label": "Average Response Time (min)"
+  },
+  {
+   "fieldname": "system_used",
+   "fieldtype": "Select",
+   "label": "System Used",
+   "options": "CAD Terminal\nRadio\nManual Log"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "CAD Operator Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dispatch Officer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:MMU-{YYYY}{MM}{DD}-{####}",
+ "creation": "2026-04-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "unit_section",
+  "unit_name",
+  "unit_code",
+  "vehicle_registration",
+  "column_break_unit",
+  "unit_type",
+  "status",
+  "home_station",
+  "deployment_section",
+  "deployment_area",
+  "deployment_date",
+  "deployment_end_date",
+  "column_break_deploy",
+  "sponsoring_agency",
+  "program_link",
+  "team_leader",
+  "equipment_section",
+  "equipment_list",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "unit_section",
+   "fieldtype": "Section Break",
+   "label": "Unit Details"
+  },
+  {
+   "fieldname": "unit_name",
+   "fieldtype": "Data",
+   "label": "Unit Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "unit_code",
+   "fieldtype": "Data",
+   "label": "Unit Code"
+  },
+  {
+   "fieldname": "vehicle_registration",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Ambulance Master"
+  },
+  {
+   "fieldname": "column_break_unit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unit_type",
+   "fieldtype": "Select",
+   "label": "Unit Type",
+   "options": "Mobile Clinic\nEye Camp Unit\nMaternal Health Unit\nDisaster Relief Unit\nOther"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Operational\nDeployed\nIn Maintenance\nDecommissioned",
+   "default": "Operational"
+  },
+  {
+   "fieldname": "home_station",
+   "fieldtype": "Link",
+   "label": "Home Station",
+   "options": "Ambulance Station"
+  },
+  {
+   "fieldname": "deployment_section",
+   "fieldtype": "Section Break",
+   "label": "Deployment Details"
+  },
+  {
+   "fieldname": "deployment_area",
+   "fieldtype": "Data",
+   "label": "Deployment Area"
+  },
+  {
+   "fieldname": "deployment_date",
+   "fieldtype": "Date",
+   "label": "Deployment Start Date"
+  },
+  {
+   "fieldname": "deployment_end_date",
+   "fieldtype": "Date",
+   "label": "Deployment End Date"
+  },
+  {
+   "fieldname": "column_break_deploy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sponsoring_agency",
+   "fieldtype": "Data",
+   "label": "Sponsoring Agency"
+  },
+  {
+   "fieldname": "program_link",
+   "fieldtype": "Link",
+   "label": "Linked Health Program",
+   "options": "Community Health Program"
+  },
+  {
+   "fieldname": "team_leader",
+   "fieldtype": "Data",
+   "label": "Team Leader"
+  },
+  {
+   "fieldname": "equipment_section",
+   "fieldtype": "Section Break",
+   "label": "Equipment & Notes"
+  },
+  {
+   "fieldname": "equipment_list",
+   "fieldtype": "Text",
+   "label": "Equipment List"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ambulance Service",
+ "name": "Mobile Medical Unit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
