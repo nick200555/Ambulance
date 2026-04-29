@@ -4,8 +4,10 @@ app_name = "bas_ambulance"
 app_title = "BAS Ambulance Service"
 app_publisher = "BAS"
 app_description = "Ambulance Service Management Module for ERPNext"
-app_email = "info@bas.com"
+app_email = "info@bas.com"                     # ✅ Fixed: plain string
 app_license = "Proprietary"
+app_icon = "ambulance"                         # optional
+app_color = "#e74c3c"                          # optional
 
 # Fixtures
 fixtures = [
@@ -14,7 +16,7 @@ fixtures = [
     "Property Setter",
     "Workflow",
     "Workflow State",
-    "Workflow Action",
+    # "Workflow Action",  # ✅ Removed: deprecated/runtime doctype in Frappe v14+
     "Print Format",
     "Notification"
 ]
